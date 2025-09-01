@@ -19,14 +19,17 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .padding(.bottom)
                 Spacer()
-                Button("Sign up") {
+                Button("Sign Up") {
                     showSignUp = true
                 }
                 .buttonStyle(.glass)
+                .buttonSizing(.flexible)
             }
+            .padding(.all)
             .frame(maxHeight: .infinity, alignment: .top)
             .navigationDestination(isPresented: $showSignUp) {
                 SignUpView()
+                    .navigationTitle("Sign Up")
             }
         }
     }

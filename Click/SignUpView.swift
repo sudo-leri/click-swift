@@ -10,21 +10,41 @@ import SwiftUI
 struct SignUpView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var comfirmPassword: String = ""
     
     var body: some View {
         VStack{
             Form {
-                TextField(text: $email, prompt: Text("E-mail")) {
-                    Text("E-mail")
-                }
+                TextField("E-mail", text: $email)
                 .autocorrectionDisabled(true)
                 .textInputAutocapitalization(.never)
                 .textContentType(.emailAddress)
-                SecureField(text: $password, prompt: Text("Password")) {
-                    Text("Password")
-                }
+                .keyboardType(.emailAddress)
+                
+                SecureField("Password", text: $password)
+                .autocorrectionDisabled(true)
+                .textInputAutocapitalization(.never)
+                .keyboardType(.asciiCapable)
+                .textContentType(.newPassword)
+                
+                SecureField("Confirm Password", text: $comfirmPassword)
+                .autocorrectionDisabled(true)
+                .textInputAutocapitalization(.never)
+                .keyboardType(.asciiCapable)
+                .textContentType(.password)
+
             }
+            
+            Spacer()
+            
+            Button("Sign Up") {
+                
+            }
+            .buttonStyle(.glassProminent)
+            .buttonSizing(.flexible)
+            .padding(.all)
         }
+        .frame(maxHeight: .infinity, alignment: .top)
     }
 }
 
