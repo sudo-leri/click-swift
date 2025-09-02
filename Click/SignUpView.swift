@@ -37,11 +37,9 @@ struct SignUpView: View {
             
             Spacer()
             
-            Button("Sign Up") {
+            PrimaryButton(title: "Sign Up") {
                 
             }
-            .buttonStyle(.glassProminent)
-            .buttonSizing(.flexible)
             .padding(.all)
         }
         .frame(maxHeight: .infinity, alignment: .top)

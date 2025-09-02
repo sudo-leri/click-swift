@@ -19,11 +19,9 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .padding(.bottom)
                 Spacer()
-                Button("Sign Up") {
+                SecondaryButton(title: "Sign Up") {
                     showSignUp = true
                 }
-                .buttonStyle(.glass)
-                .buttonSizing(.flexible)
             }
             .padding(.all)
             .frame(maxHeight: .infinity, alignment: .top)
