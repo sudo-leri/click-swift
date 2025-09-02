@@ -34,15 +34,11 @@ struct SignUpView: View {
                 .textContentType(.password)
 
             }
-            
-            Spacer()
-            
+                        
             PrimaryButton(title: "Sign Up") {
                 
             }
-            .padding(.all)
         }
-        .frame(maxHeight: .infinity, alignment: .top)
     }
 }
 
